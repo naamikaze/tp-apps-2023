@@ -35,9 +35,6 @@ class BuscarActivity : AppCompatActivity(), ProductItemClickListener {
             }
 
             override fun onQueryTextChange(newText: String): Boolean {
-                // Si deseas realizar la búsqueda en tiempo real mientras el usuario escribe,
-                // puedes descomentar la siguiente línea y eliminar el método onQueryTextSubmit.
-                // performSearch(newText)
                 return true
             }
         })
@@ -67,7 +64,6 @@ class BuscarActivity : AppCompatActivity(), ProductItemClickListener {
 
     private fun performSearch(query: String) {
         if (query.isNotEmpty()) {
-            // Cancelamos la búsqueda anterior si aún está en progreso
             GlobalScope.coroutineContext.cancelChildren()
 
             // Mostramos un indicador de carga mientras se realiza la búsqueda
@@ -90,18 +86,6 @@ class BuscarActivity : AppCompatActivity(), ProductItemClickListener {
                 }
             }
 
-            // Si deseas agregar un tiempo de espera antes de mostrar los resultados,
-            // puedes descomentar las siguientes líneas y ajustar el tiempo en milisegundos.
-            /*
-            val timeout = 500L
-            GlobalScope.launch(Dispatchers.Main) {
-                delay(timeout)
-                if (job.isActive) {
-                    job.cancel()
-                    // Mostrar un mensaje de "No se encontraron resultados" o alguna otra acción
-                }
-            }
-            */
         } else {
             adapter.items = emptyList()
         }
@@ -109,6 +93,6 @@ class BuscarActivity : AppCompatActivity(), ProductItemClickListener {
 
     override fun onProductItemClick(position: Int) {
         val product = adapter.items[position]
-        // Realiza la acción que deseas al hacer clic en un producto (por ejemplo, abrir los detalles)
+        // Realiza la acción  al hacer clic en un producto
     }
 }

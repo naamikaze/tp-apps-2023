@@ -24,7 +24,6 @@ class ProductViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
             .load(product.image)
             .into(image)
 
-        // Aquí establecemos la imagen del placeholder
         image.setImageResource(R.drawable.placeholder)
     }
 }

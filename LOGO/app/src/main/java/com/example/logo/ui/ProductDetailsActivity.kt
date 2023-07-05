@@ -45,7 +45,7 @@ class ProductDetailsActivity : AppCompatActivity() {
         val tvTitle: TextView = findViewById(R.id.tvTitle)
         val tvPrice: TextView = findViewById(R.id.tvPrice)
         val tvDescription: TextView = findViewById(R.id.tvDescription)
-        // Obtén la instancia de FirebaseAuth para obtener el ID del usuario actual
+        // la instancia de FirebaseAuth para obtener el ID del usuario actual
         val firebaseAuth = FirebaseAuth.getInstance()
         userId = firebaseAuth.currentUser?.uid ?: ""
 
@@ -64,21 +64,21 @@ class ProductDetailsActivity : AppCompatActivity() {
         // Crea una instancia de FavouriteProduct con los datos necesarios
         val favouriteProduct = FavouriteProduct(product.id, userId)
 
-        // Obtiene una referencia a la colección "users" en Firestore
+        // Obtiene una referencia a la colección users en Firestore
         val firestore = FirebaseFirestore.getInstance()
         val usersCollection = firestore.collection("users")
 
         // Obtiene una referencia al documento del usuario actual
         val currentUserDocRef = usersCollection.document(userId)
 
-        // Agrega el ID del producto a la colección "favorite_products" del usuario
+        // Agrega el ID del producto a la colección favorite_products del usuario
         currentUserDocRef.collection("favorite_products").document(product.id.toString()).set(favouriteProduct)
             .addOnSuccessListener {
-                // Guardado exitoso, puedes mostrar un mensaje o realizar alguna acción adicional
+                // Guardado exitoso
                 Toast.makeText(this, "Producto agregado a favoritos", Toast.LENGTH_SHORT).show()
             }
             .addOnFailureListener { e ->
-                // Error al guardar, maneja el error de acuerdo a tus necesidades
+                // Error al guardar
                 Toast.makeText(this, "Error al agregar el producto a favoritos", Toast.LENGTH_SHORT).show()
             }
     }

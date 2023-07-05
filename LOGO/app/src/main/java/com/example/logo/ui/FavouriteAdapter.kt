@@ -47,18 +47,16 @@ class FavouriteAdapter(
                         loadImage(product.image, holder.imageView)
                     }
                 } else {
-                    // Handle API error response
                 }
             }
 
             override fun onFailure(call: Call<Product>, t: Throwable) {
-                // Handle API call failure
             }
         })
 
         holder.productIdTextView.text = favourite.productId.toString()
         holder.removeButton.setOnClickListener {
-            onRemoveClickListener.onRemoveClick(favourite) // Notify the listener when remove button is clicked
+            onRemoveClickListener.onRemoveClick(favourite)
         }
     }
 

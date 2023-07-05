@@ -13,8 +13,6 @@
         android:layout_height="match_parent"
         android:clipToOutline="true">
 
-        <!-- Aquí puedes agregar otros elementos que desees mantener dentro del RelativeLayout -->
-
     </RelativeLayout>
 
     <androidx.recyclerview.widget.RecyclerView
@@ -36,7 +34,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rvProducts">
 
-        <!-- Se agregaron atributos de margen a los botones -->
 
         <Button
             android:id="@+id/button2"
