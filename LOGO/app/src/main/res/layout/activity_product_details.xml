@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imgProductDetails"
+            android:layout_width="match_parent"
+            android:layout_height="242dp"
+            android:layout_marginTop="16dp"
+            android:padding="8dp"
+            android:paddingTop="16dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/placeholder" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:textAlignment="viewStart"
+            android:textColor="@color/colorPrincipal"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            tools:text="Titulo del producto" />
+
+        <TextView
+            android:id="@+id/tvPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/roboto_black"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textColor="@android:color/black"
+            android:textSize="34sp"
+            tools:text="$99.99" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/roboto_black"
+            android:text="COMPRAR"
+            android:textAlignment="center"
+            android:textColor="@color/colorSecundario"
+            android:textSize="20sp"
+            app:cornerRadius="8dp" />
+
+        <Button
+            android:id="@+id/btnAddToFavorites"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:text="Agregar a favoritos"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            app:cornerRadius="8dp" />
+
+
+        <TextView
+            android:id="@+id/tvDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:background="@color/colorSecundario"
+            android:fontFamily="@font/roboto_black"
+            android:padding="16dp"
+            android:textColor="@color/colorPrincipal"
+            android:textSize="16sp"
+            tools:text="Descripción del producto en cuestion" />
+
+
+    </LinearLayout>
+</ScrollView>
